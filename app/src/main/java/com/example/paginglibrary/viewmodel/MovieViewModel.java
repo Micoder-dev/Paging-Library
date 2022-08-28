@@ -8,6 +8,7 @@ import androidx.paging.PagingData;
 import androidx.paging.rxjava3.PagingRx;
 
 import com.example.paginglibrary.model.Movie;
+import com.example.paginglibrary.paging.MoviePagingSource;
 
 import io.reactivex.rxjava3.core.Flowable;
 import kotlinx.coroutines.CoroutineScope;
@@ -38,8 +39,6 @@ public class MovieViewModel extends ViewModel {
         moviePagingDataFlowable = PagingRx.getFlowable(pager);
         CoroutineScope coroutineScope = ViewModelKt.getViewModelScope(this);
         PagingRx.cachedIn(moviePagingDataFlowable, coroutineScope);
-
-        )
 
     }
 
